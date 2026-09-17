@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmacia Salud & Bienestar</title>
+<meta name="description" content="Catálogo digital de Farmacia Salud & Bienestar con pedidos por WhatsApp.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">💚 Atención con amor y compromiso para tu salud y bienestar
+  <span>📍 45 y Rosendo Avilés Esq. · 🕐 07:00 AM – 22:30 PM</span>
+</div>
+
+<header class="header">
+  <div class="nav">
+    <a class="brand" href="#inicio">
+      <img src="assets/logo.png" alt="Farmacia Salud & Bienestar">
+    </a>
+    <nav>
+      <a href="#inicio">Inicio</a><a href="#catalogo">Catálogo</a><a href="#ofertas">Ofertas</a>
+      <a href="#servicios">Servicios</a><a href="#contacto">Contacto</a>
+    </nav>
+    <button class="cart-button" onclick="openCart()">🛒 Carrito <b id="count">0</b></button>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="watermark">FARMACIA<br><span>SALUD & BIENESTAR</span></div>
+  <div class="hero-copy">
+    <p class="eyebrow">FARMACIA SALUD & BIENESTAR</p>
+    <h1>Tu salud,<br><span>nuestra prioridad.</span></h1>
+    <p class="lead">Medicamentos, cuidado personal, productos para mamá y bebé y mucho más. Consulta nuestro catálogo y envía tu pedido directamente por WhatsApp.</p>
+    <div class="actions">
+      <a class="btn green" href="#catalogo">🛍️ Ver catálogo</a>
+      <a class="btn blue" id="heroWA">💬 Pedir por WhatsApp</a>
+    </div>
+    <div class="trust">
+      <div>✓ <b>100 productos</b><small>Catálogo inicial</small></div>
+      <div>✓ <b>Carrito</b><small>Pedido organizado</small></div>
+      <div>✓ <b>WhatsApp</b><small>Atención directa</small></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <img src="assets/logo.png" alt="Logo Farmacia Salud & Bienestar">
+    <h2>Compra fácil y segura</h2>
+    <p>Selecciona tus productos, revisa tu carrito y envíanos el pedido.</p>
+    <div class="mini-info"><span>🚚</span><div><b>Delivery</b><small>Consulta cobertura</small></div></div>
+    <div class="mini-info"><span>📲</span><div><b>WhatsApp</b><small>098 502 3640</small></div></div>
+    <div class="mini-info"><span>🕐</span><div><b>Horario</b><small>07:00 – 22:30</small></div></div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div>🛍️ <b>100 productos</b><small>Catálogo inicial</small></div>
+  <div>💬 <b>Pedidos por WhatsApp</b><small>Rápido y directo</small></div>
+  <div>🔎 <b>Buscador inteligente</b><small>Encuentra lo que necesitas</small></div>
+  <div>📱 <b>100% responsive</b><small>Celular, tablet y PC</small></div>
+</section>
+
+<section class="section" id="catalogo">
+  <div class="section-head">
+    <div><p class="eyebrow">CATÁLOGO DIGITAL</p><h2>Encuentra tus productos</h2><p>Los precios y disponibilidad se confirman con la farmacia antes de la venta.</p></div>
+    <button class="outline" onclick="openCart()">🛒 Ver carrito (<span id="count2">0</span>)</button>
+  </div>
+  <div class="filters">
+    <input id="search" type="search" placeholder="🔎 Buscar producto..." oninput="renderProducts()">
+    <select id="filter" onchange="renderProducts()">
+      <option>Todos</option><option>Medicamentos</option><option>Cuidado personal</option>
+      <option>Bebé y maternidad</option><option>Vitaminas y suplementos</option>
+      <option>Higiene</option><option>Primeros Auxilios</option>
+    </select>
+  </div>
+  <div id="chips" class="chips"></div>
+  <div id="products" class="product-grid"></div>
+</section>
+
+<section class="section offers" id="ofertas">
+  <div class="section-head"><div><p class="eyebrow">PROMOCIONES</p><h2>Ofertas y destacados</h2></div></div>
+  <div class="offer-grid">
+    <div class="offer-card"><span>💊</span><b>Medicamentos</b><p>Consulta disponibilidad y precio actual.</p></div>
+    <div class="offer-card"><span>👶</span><b>Mamá y bebé</b><p>Productos para el cuidado diario.</p></div>
+    <div class="offer-card"><span>✨</span><b>Vitaminas</b><p>Opciones de bienestar para toda la familia.</p></div>
+  </div>
+</section>
+
+<section class="section" id="servicios">
+  <p class="eyebrow">SERVICIOS</p><h2>Estamos para ayudarte</h2>
+  <div class="service-grid">
+    <article>🚚<h3>Delivery</h3><p>Consulta cobertura, horarios y costo de entrega por WhatsApp.</p></article>
+    <article>📲<h3>Pedidos por WhatsApp</h3><p>Arma tu carrito y envía el pedido con un solo botón.</p></article>
+    <article>💳<h3>Formas de pago</h3><p>Consulta las formas de pago disponibles al confirmar tu pedido.</p></article>
+    <article>🕐<h3>Horario</h3><p>Todos los días de 07:00 AM a 22:30 PM.</p></article>
+  </div>
+</section>
+
+<section class="contact-band" id="contacto">
+  <div><p class="eyebrow">CONTÁCTANOS</p><h2>Farmacia Salud & Bienestar</h2><p>📲 WhatsApp: <b>098 502 3640</b><br>📍 45 y Rosendo Avilés Esq.<br>🕐 07:00 AM – 22:30 PM</p></div>
+  <a class="btn blue" id="contactWA">💬 Escribir por WhatsApp</a>
+</section>
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt="Farmacia Salud & Bienestar">
+  <p>Tu salud, nuestra prioridad.</p>
+  <small>© 2026 Farmacia Salud & Bienestar · Catálogo informativo. Los precios, existencias y condiciones de venta deben confirmarse con la farmacia.</small>
+</footer>
+
+<a class="float-wa" id="floatWA">💬 WhatsApp</a>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()">
+  <aside class="drawer">
+    <div class="drawer-head"><h2>Tu pedido</h2><button onclick="closeCart()">✕</button></div>
+    <div id="cart"></div>
+    <div class="cart-note">Los precios se confirmarán antes de la venta.</div>
+    <a class="btn green full" id="sendWA">Enviar pedido por WhatsApp</a>
+  </aside>
+</div>
+
+<script>
+const WHATSAPP = "593985023640";
+const products = [
+  {
+    "id": 1,
+    "name": "Paracetamol 500 mg x 10 tabletas",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 2,
+    "name": "Ibuprofeno 400 mg x 10 tabletas",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 3,
+    "name": "Loratadina 10 mg x 10 tabletas",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 4,
+    "name": "Omeprazol 20 mg x 14 cápsulas",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 5,
+    "name": "Ácido acetilsalicílico 100 mg x 30 tabletas",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 6,
+    "name": "Diclofenaco gel 1%",
+    "cat": "Medicamentos",
+    "emoji": "🧴"
+  },
+  {
+    "id": 7,
+    "name": "Sales de rehidratación oral",
+    "cat": "Medicamentos",
+    "emoji": "💧"
+  },
+  {
+    "id": 8,
+    "name": "Antiácido en tabletas",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 9,
+    "name": "Bismuto suspensión oral",
+    "cat": "Medicamentos",
+    "emoji": "🧴"
+  },
+  {
+    "id": 10,
+    "name": "Simeticona gotas",
+    "cat": "Medicamentos",
+    "emoji": "💧"
+  },
+  {
+    "id": 11,
+    "name": "Naproxeno 250 mg",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 12,
+    "name": "Cetirizina 10 mg",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 13,
+    "name": "Fexofenadina 120 mg",
+    "cat": "Medicamentos",
+    "emoji": "💊"
+  },
+  {
+    "id": 14,
+    "name": "Clotrimazol crema 1%",
+    "cat": "Medicamentos",
+    "emoji": "🧴"
+  },
+  {
+    "id": 15,
+    "name": "Miconazol crema",
+    "cat": "Medicamentos",
+    "emoji": "🧴"
+  },
+  {
+    "id": 16,
+    "name": "Povidona yodada",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩹"
+  },
+  {
+    "id": 17,
+    "name": "Alcohol antiséptico",
+    "cat": "Higiene",
+    "emoji": "🧴"
+  },
+  {
+    "id": 18,
+    "name": "Agua oxigenada",
+    "cat": "Primeros Auxilios",
+    "emoji": "🧴"
+  },
+  {
+    "id": 19,
+    "name": "Suero fisiológico",
+    "cat": "Primeros Auxilios",
+    "emoji": "💧"
+  },
+  {
+    "id": 20,
+    "name": "Gasas estériles",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩹"
+  },
+  {
+    "id": 21,
+    "name": "Vitamina C 500 mg",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🍊"
+  },
+  {
+    "id": 22,
+    "name": "Vitamina C + Zinc",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🍊"
+  },
+  {
+    "id": 23,
+    "name": "Multivitamínico adulto",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "❤️"
+  },
+  {
+    "id": 24,
+    "name": "Complejo B",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "💊"
+  },
+  {
+    "id": 25,
+    "name": "Vitamina D3",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "☀️"
+  },
+  {
+    "id": 26,
+    "name": "Omega 3",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "❤️"
+  },
+  {
+    "id": 27,
+    "name": "Calcio + Vitamina D",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🦴"
+  },
+  {
+    "id": 28,
+    "name": "Magnesio",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "💊"
+  },
+  {
+    "id": 29,
+    "name": "Hierro",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "💊"
+  },
+  {
+    "id": 30,
+    "name": "Zinc",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "💊"
+  },
+  {
+    "id": 31,
+    "name": "Ácido fólico",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "💊"
+  },
+  {
+    "id": 32,
+    "name": "Colágeno hidrolizado",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "✨"
+  },
+  {
+    "id": 33,
+    "name": "Biotina",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "✨"
+  },
+  {
+    "id": 34,
+    "name": "Electrolitos en polvo",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "💧"
+  },
+  {
+    "id": 35,
+    "name": "Suplemento de fibra",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🌾"
+  },
+  {
+    "id": 36,
+    "name": "Proteína en polvo",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🥛"
+  },
+  {
+    "id": 37,
+    "name": "Bebida nutricional vainilla",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🥛"
+  },
+  {
+    "id": 38,
+    "name": "Bebida nutricional chocolate",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🥛"
+  },
+  {
+    "id": 39,
+    "name": "Multivitamínico infantil",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🧒"
+  },
+  {
+    "id": 40,
+    "name": "Gomitas multivitamínicas",
+    "cat": "Vitaminas y suplementos",
+    "emoji": "🍬"
+  },
+  {
+    "id": 41,
+    "name": "Shampoo familiar",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 42,
+    "name": "Acondicionador",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 43,
+    "name": "Jabón líquido corporal",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 44,
+    "name": "Jabón de tocador",
+    "cat": "Cuidado personal",
+    "emoji": "🧼"
+  },
+  {
+    "id": 45,
+    "name": "Crema hidratante corporal",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 46,
+    "name": "Protector solar FPS 50",
+    "cat": "Cuidado personal",
+    "emoji": "☀️"
+  },
+  {
+    "id": 47,
+    "name": "Protector solar facial",
+    "cat": "Cuidado personal",
+    "emoji": "☀️"
+  },
+  {
+    "id": 48,
+    "name": "Desodorante roll-on",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 49,
+    "name": "Desodorante aerosol",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 50,
+    "name": "Crema dental",
+    "cat": "Cuidado personal",
+    "emoji": "🪥"
+  },
+  {
+    "id": 51,
+    "name": "Cepillo dental adulto",
+    "cat": "Cuidado personal",
+    "emoji": "🪥"
+  },
+  {
+    "id": 52,
+    "name": "Cepillo dental infantil",
+    "cat": "Cuidado personal",
+    "emoji": "🪥"
+  },
+  {
+    "id": 53,
+    "name": "Hilo dental",
+    "cat": "Cuidado personal",
+    "emoji": "🦷"
+  },
+  {
+    "id": 54,
+    "name": "Enjuague bucal",
+    "cat": "Cuidado personal",
+    "emoji": "🦷"
+  },
+  {
+    "id": 55,
+    "name": "Bálsamo labial",
+    "cat": "Cuidado personal",
+    "emoji": "💄"
+  },
+  {
+    "id": 56,
+    "name": "Crema para manos",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 57,
+    "name": "Gel para cabello",
+    "cat": "Cuidado personal",
+    "emoji": "🧴"
+  },
+  {
+    "id": 58,
+    "name": "Agua micelar",
+    "cat": "Cuidado personal",
+    "emoji": "💧"
+  },
+  {
+    "id": 59,
+    "name": "Algodón",
+    "cat": "Higiene",
+    "emoji": "⚪"
+  },
+  {
+    "id": 60,
+    "name": "Cotonetes",
+    "cat": "Higiene",
+    "emoji": "⚪"
+  },
+  {
+    "id": 61,
+    "name": "Pañales talla RN",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 62,
+    "name": "Pañales talla P",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 63,
+    "name": "Pañales talla M",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 64,
+    "name": "Pañales talla G",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 65,
+    "name": "Pañales talla XG",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 66,
+    "name": "Pañales talla XXG",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 67,
+    "name": "Toallitas húmedas para bebé",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 68,
+    "name": "Crema protectora para pañal",
+    "cat": "Bebé y maternidad",
+    "emoji": "🧴"
+  },
+  {
+    "id": 69,
+    "name": "Shampoo para bebé",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 70,
+    "name": "Jabón para bebé",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 71,
+    "name": "Colonia para bebé",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 72,
+    "name": "Biberón",
+    "cat": "Bebé y maternidad",
+    "emoji": "🍼"
+  },
+  {
+    "id": 73,
+    "name": "Chupón",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 74,
+    "name": "Mamadera anticólicos",
+    "cat": "Bebé y maternidad",
+    "emoji": "🍼"
+  },
+  {
+    "id": 75,
+    "name": "Cepillo limpiabiberones",
+    "cat": "Bebé y maternidad",
+    "emoji": "🍼"
+  },
+  {
+    "id": 76,
+    "name": "Termómetro infantil",
+    "cat": "Bebé y maternidad",
+    "emoji": "🌡️"
+  },
+  {
+    "id": 77,
+    "name": "Aspirador nasal infantil",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 78,
+    "name": "Cambiador portátil",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 79,
+    "name": "Crema hidratante infantil",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 80,
+    "name": "Talco para bebé",
+    "cat": "Bebé y maternidad",
+    "emoji": "👶"
+  },
+  {
+    "id": 81,
+    "name": "Gel antibacterial",
+    "cat": "Higiene",
+    "emoji": "🧴"
+  },
+  {
+    "id": 82,
+    "name": "Jabón antibacterial",
+    "cat": "Higiene",
+    "emoji": "🧼"
+  },
+  {
+    "id": 83,
+    "name": "Mascarillas desechables",
+    "cat": "Higiene",
+    "emoji": "😷"
+  },
+  {
+    "id": 84,
+    "name": "Guantes desechables",
+    "cat": "Higiene",
+    "emoji": "🧤"
+  },
+  {
+    "id": 85,
+    "name": "Toallas húmedas",
+    "cat": "Higiene",
+    "emoji": "🧻"
+  },
+  {
+    "id": 86,
+    "name": "Papel higiénico",
+    "cat": "Higiene",
+    "emoji": "🧻"
+  },
+  {
+    "id": 87,
+    "name": "Toallas sanitarias",
+    "cat": "Higiene",
+    "emoji": "🌸"
+  },
+  {
+    "id": 88,
+    "name": "Protectores diarios",
+    "cat": "Higiene",
+    "emoji": "🌸"
+  },
+  {
+    "id": 89,
+    "name": "Tampones",
+    "cat": "Higiene",
+    "emoji": "🌸"
+  },
+  {
+    "id": 90,
+    "name": "Crema para rozaduras",
+    "cat": "Higiene",
+    "emoji": "🧴"
+  },
+  {
+    "id": 91,
+    "name": "Curitas adhesivas",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩹"
+  },
+  {
+    "id": 92,
+    "name": "Venda elástica",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩹"
+  },
+  {
+    "id": 93,
+    "name": "Venda de gasa",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩹"
+  },
+  {
+    "id": 94,
+    "name": "Esparadrapo",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩹"
+  },
+  {
+    "id": 95,
+    "name": "Tijera de curación",
+    "cat": "Primeros Auxilios",
+    "emoji": "✂️"
+  },
+  {
+    "id": 96,
+    "name": "Pinza de curación",
+    "cat": "Primeros Auxilios",
+    "emoji": "🩺"
+  },
+  {
+    "id": 97,
+    "name": "Termómetro digital",
+    "cat": "Primeros Auxilios",
+    "emoji": "🌡️"
+  },
+  {
+    "id": 98,
+    "name": "Compresa fría instantánea",
+    "cat": "Primeros Auxilios",
+    "emoji": "❄️"
+  },
+  {
+    "id": 99,
+    "name": "Compresa caliente reutilizable",
+    "cat": "Primeros Auxilios",
+    "emoji": "♨️"
+  },
+  {
+    "id": 100,
+    "name": "Botiquín básico",
+    "cat": "Primeros Auxilios",
+    "emoji": "🧰"
+  }
+];
+let cart = JSON.parse(localStorage.getItem("fsb_cart") || "{}");
+
+function wa(text){ return "https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(text); }
+function save(){ localStorage.setItem("fsb_cart", JSON.stringify(cart)); }
+function categories(){ return ["Todos","Medicamentos","Cuidado personal","Bebé y maternidad","Vitaminas y suplementos","Higiene","Primeros Auxilios"]; }
+
+function renderChips(){
+  document.getElementById("chips").innerHTML = categories().map(c =>
+    `<button class="chip ${document.getElementById("filter").value===c?"active":""}" onclick="setCat('${c}')">${c}</button>`
+  ).join("");
+}
+function setCat(c){ document.getElementById("filter").value=c; renderProducts(); }
+function renderProducts(){
+  renderChips();
+  const q=(document.getElementById("search").value||"").toLowerCase().trim();
+  const f=document.getElementById("filter").value;
+  const list=products.filter(p => (f==="Todos" || p.cat===f) && p.name.toLowerCase().includes(q));
+  document.getElementById("products").innerHTML = list.length ? list.map(card).join("") :
+    `<div class="empty">No encontramos productos con esa búsqueda.</div>`;
+}
+function card(p){
+  return `<article class="product-card">
+    <div class="product-art"><span>${p.emoji}</span><small>${p.cat}</small></div>
+    <h3>${p.name}</h3><div class="price">Consultar</div>
+    <button class="add" onclick="add(${p.id})">🛒 Agregar</button>
+  </article>`;
+}
+function add(id){ cart[id]=(cart[id]||0)+1; save(); updateCart(); openCart(); }
+function change(id,d){ cart[id]=(cart[id]||0)+d; if(cart[id]<=0) delete cart[id]; save(); updateCart(); }
+function updateCart(){
+  const entries=Object.entries(cart);
+  const count=entries.reduce((s,[,q])=>s+q,0);
+  document.getElementById("count").textContent=count;
+  document.getElementById("count2").textContent=count;
+  document.getElementById("cart").innerHTML=entries.length ? entries.map(([id,qty])=>{
+    const p=products.find(x=>x.id==id);
+    return `<div class="cart-item"><div class="cart-icon">${p.emoji}</div><div class="cart-info"><b>${p.name}</b><small>Precio: consultar</small>
+      <div class="qty"><button onclick="change(${p.id},-1)">−</button><span>${qty}</span><button onclick="change(${p.id},1)">+</button></div></div></div>`;
+  }).join("") : `<div class="empty">Tu carrito está vacío.</div>`;
+  const lines=["Hola, Farmacia Salud & Bienestar. Quiero realizar este pedido:"];
+  entries.forEach(([id,qty])=>{ const p=products.find(x=>x.id==id); lines.push(`• ${p.name} x${qty}`); });
+  lines.push("¿Podrían confirmar disponibilidad, precio final y costo de delivery?");
+  document.getElementById("sendWA").href=wa(lines.join("\n"));
+}
+function openCart(){ document.getElementById("overlay").classList.add("open"); updateCart(); }
+function closeCart(){ document.getElementById("overlay").classList.remove("open"); }
+function toggleMenu(){ document.querySelector("nav").classList.toggle("show"); }
+
+const genericMsg="Hola, Farmacia Salud & Bienestar. Quiero hacer una consulta.";
+document.getElementById("heroWA").href=wa(genericMsg);
+document.getElementById("contactWA").href=wa(genericMsg);
+document.getElementById("floatWA").href=wa(genericMsg);
+renderProducts(); updateCart();
+</script>
+</body>
+</html>
